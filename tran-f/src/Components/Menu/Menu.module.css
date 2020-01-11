@@ -1,0 +1,11 @@
+.wrapper{
+    position: absolute;
+    top: 0;
+    left: calc(-100% + 80px);
+    width: 100%;
+    height: calc(100vh - 50px);
+    transition: 0.5s;
+}
+.wrapper_active{
+    left: 0;
+}
