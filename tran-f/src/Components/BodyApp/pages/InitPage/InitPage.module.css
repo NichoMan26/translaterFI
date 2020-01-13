@@ -1,6 +1,17 @@
 .wrapper{
     display: flex;
-    padding: 10px 20px;
+    padding: 10px 30px;
     flex-direction: column;
+    align-items: center;
     text-align: center;
+}
+.button{
+    background-color: #2c2c2c;
+    color:yellow;
+    width: 40%;
+    padding: 10px 20px;
+    border: 1px solid yellow;
+    font-size: 20px;
+    border-radius: 50px;
+    margin-top: 30px;
 }

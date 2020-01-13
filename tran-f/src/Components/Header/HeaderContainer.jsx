@@ -1,5 +1,6 @@
 import {connect} from 'react-redux'
 import Header from './Header'
+import {appUserName} from './../../redux/appReducer'
 
 
 let mapStateToProps = (state) => {
@@ -9,7 +10,9 @@ let mapStateToProps = (state) => {
 }
 let mapDispatchToProps = (dispatch) => {
     return {
-
+        setUserName:(userName) => {
+            dispatch(appUserName(userName))
+        }
     }
 }
 export default connect( mapStateToProps,  mapDispatchToProps)(Header)

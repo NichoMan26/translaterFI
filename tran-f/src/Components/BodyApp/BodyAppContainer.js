@@ -1,16 +1,28 @@
 import {connect} from 'react-redux'
 import BodyApp from './BodyApp'
-import { appSetState } from '../../redux/appReducer'
+import { setAppState, setAppMode, addCurrentWords } from '../../redux/appReducer'
+import {setBlockSelected} from '../../redux/wordsReducer'
 
 let mapStateToProps = (state) => {
     return{
-        app: state.appData
+        app: state.appData,
+        words:state.words.wordsBlock,
+        selectedBlock:state.words.selectedBlock
     }
 }
 let mapDispatchToProps = (dispatch) => {
     return {
-        appSetState: (appState) => {
-            dispatch(appSetState(appState));
+        setAppState:(appState) => {
+            dispatch(setAppState(appState));
+        },
+        setBlockSelected:(selectedBlock) => {
+            dispatch(setBlockSelected(selectedBlock))
+        },
+        setAppMode:(appMode) => {
+            dispatch(setAppMode(appMode))
+        },
+        addCurrentWords:(currentWords) => {
+            dispatch(addCurrentWords(currentWords))
         }
     }
 }
