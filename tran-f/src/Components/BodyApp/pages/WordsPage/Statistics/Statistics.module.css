@@ -1,0 +1,19 @@
+.wrapper{
+    height: calc((100vw - 250px) / 2);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+.staicWrapper{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: #2c2c2c;
+    padding: 3px 8px;
+    background-color: yellow;
+    border: 1px solid #2c2c2c;
+    border-radius: 5px;
+    display: inline-block;
+}

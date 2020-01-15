@@ -5,7 +5,6 @@ import ReduxSettingsForm from './ReduxSettingsForm'
 
 const SettingsPage = (props) => {
   const onSubmit = (dataForm) => {
-    console.log('dataForm: ', dataForm);
     let currentWords = dataForm.wordsBlock
     props.setBlockSelected(dataForm.wordsBlock)
     props.setAppMode(dataForm.mode)

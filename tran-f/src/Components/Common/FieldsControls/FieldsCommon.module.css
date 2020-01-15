@@ -1,0 +1,16 @@
+.error{
+   position: absolute;
+   left: 50%;
+   top: 10%;
+   transform: translate(-50%, 0);
+   color: red;
+   border:2px solid red;
+   background-color: rgb(255, 155, 155);
+   border-radius: 10px;
+   width: 80%;
+   font-size: 30px;
+   padding: 10px 20px;
+}
+.noError{
+    display: none;
+}

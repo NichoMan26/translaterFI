@@ -17,7 +17,8 @@ const BodyApp = (props) => {
                              addCurrentWords={props.addCurrentWords}
                              words={props.words}/>)
       case 'begin':
-        return <WordsPage app={props.app}/>
+        return <WordsPage app={props.app} 
+                          />
       default:
         return(<div>nothink <button onTouchStart={() => {props.appSetState('init')}}>stop</button></div>)
     }
