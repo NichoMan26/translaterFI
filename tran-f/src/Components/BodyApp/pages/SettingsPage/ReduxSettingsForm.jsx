@@ -3,6 +3,7 @@ import cls from  './ReduxSettingsForm.module.css'
 import { Field, reduxForm } from 'redux-form'
 import {required} from '../../../../utils/validators/validators'
 import {Input} from '../../../Common/FieldsControls/FieldsCommon'
+
 const ExamForm = (props) => {
   let blocks = [] // arr with namr of blocks
     for (let key in props.words){

@@ -3,7 +3,6 @@ import cls from  './Statistics.module.css'
 
 
 const Statistics = (props) => {
-    
    return(
        <div className={cls.wrapper}>
             <p className={cls.staicWrapper}>

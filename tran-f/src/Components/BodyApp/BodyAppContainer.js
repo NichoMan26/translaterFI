@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import BodyApp from './BodyApp'
-import { setAppState, setAppMode, addCurrentWords , deleteExecutedWord} from '../../redux/appReducer'
+import { setAppState, setAppMode, addCurrentWords , updateScore} from '../../redux/appReducer'
 import {setBlockSelected} from '../../redux/wordsReducer'
 
 let mapStateToProps = (state) => {
@@ -23,6 +23,9 @@ let mapDispatchToProps = (dispatch) => {
         },
         addCurrentWords:(currentWords) => {
             dispatch(addCurrentWords(currentWords))
+        },
+        updateScore:(score) => {
+            dispatch(updateScore(score))
         },
         
     }

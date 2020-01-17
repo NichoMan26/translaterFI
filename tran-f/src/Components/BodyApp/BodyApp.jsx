@@ -3,6 +3,7 @@ import cls from  './BodyApp.module.css'
 import InitPage from './pages/InitPage/InitPage'
 import SettingsPage from './pages/SettingsPage/SettingsPage'
 import WordsPage from './pages/WordsPage/WordsPage'
+import FinishPage from './pages/FinishPage/FinishPage'
 
 const BodyApp = (props) => {
     switch(props.app.appState) {
@@ -17,8 +18,15 @@ const BodyApp = (props) => {
                              addCurrentWords={props.addCurrentWords}
                              words={props.words}/>)
       case 'begin':
-        return <WordsPage app={props.app} 
+        return <WordsPage app={props.app}
+                          updateScore={props.updateScore}
+                          setAppState={props.setAppState} 
                           />
+       
+      case 'finish':
+        return (<FinishPage app={props.app}
+                            words={props.words}
+                            />)
       default:
         return(<div>nothink <button onTouchStart={() => {props.appSetState('init')}}>stop</button></div>)
     }

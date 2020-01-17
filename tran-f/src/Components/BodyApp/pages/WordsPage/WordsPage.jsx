@@ -5,21 +5,26 @@ import Statistics from './Statistics/Statistics'
 
 
 const WordsPage = (props) => {
-    const [words, setWords] = useState(props.app.words.words)
-    const [count, setCount] = useState(0)
-    const increaseCount = () => {
-        setCount(count + 1)
+
+    const [words, setWords] = useState(props.app.words.words) // stay arr with words
+    const increaseCount = () => {// 
+        props.updateScore(props.app.score + 1)
     }
-    let number = Math.floor(Math.random() * (words.length))
-    const deleteExecutedWord = () => {
-        let newWords = words.filter((w,idx)=>{
+    let number = Math.floor(Math.random() * (words.length)) // rendom number for choosen word from arr with words
+    const deleteExecutedWord = () => { // delete words from currentArr
+        let newWords = words.filter((w,idx)=>{ // new aar with words
             if (idx !== number)  return w
         })
+        if(newWords.length === 0){
+            props.setAppState('finish')
+        }
         setWords(newWords)
-    }
+       
+     }
+
    return(
        <div>
-           <Statistics mode={props.app.mode} count={count} wordsLength={props.app.wordsLength} />
+           <Statistics mode={props.app.mode}  count={props.app.score} wordsLength={props.app.wordsLength} />
            <Word increaseCount={increaseCount} 
                 mode={props.app.mode}
                 wordNumber={number}
