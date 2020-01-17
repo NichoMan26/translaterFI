@@ -7,7 +7,7 @@ import {Input} from '../../../../../Common/FieldsControls/FieldsCommon'
 const WordForm = (props) => {
     return (
         <form className={cls.wrapper} onSubmit={props.handleSubmit}>
-            <Field onChange={(e, newValue) => {props.answerChange(newValue)}}  
+            <Field onChange={(e, newValue) => {props.answerChange(newValue.toLowerCase())}}  
                     placeholder='Enter your answer' 
                     className={props.mode === 'study' 
                     ? props.checkAnswer() ? `${cls.input} ${cls.input_true}` : `${cls.input} ${cls.input_false}`

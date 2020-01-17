@@ -19,7 +19,7 @@ const Word = (props) => {
         return w.fi.slice(0, answer.length) === answer ? true : false 
     }
     const onSubmit = (dataForm, dispatch) => {
-        if(dataForm.wordAnswer === props.word.fi){
+        if(dataForm.wordAnswer.toLowerCase() === props.word.fi){
             dispatch(reset('wordAnswer'));
             if(props.mode === 'exam'){
                  props.increaseCount()
