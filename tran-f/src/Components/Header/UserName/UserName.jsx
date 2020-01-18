@@ -17,7 +17,9 @@ const UserName = (props) => {
         setEditMode(false)
     }
     if(props.userName && !editMode){
-        return <div onTouchStart={setEditModeTrue} className={cls.wrapper}>{props.userName}</div>
+        return <div onTouchStart={props.appState === 'init' || props.appState === 'start' 
+                                ? setEditModeTrue
+                                : null} className={cls.wrapper}>{props.userName}</div>
     } else {
         return <UserNameForm  onSubmit={onSubmit}/>
     }

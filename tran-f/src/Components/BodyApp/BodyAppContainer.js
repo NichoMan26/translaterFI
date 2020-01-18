@@ -1,7 +1,8 @@
 import {connect} from 'react-redux'
 import BodyApp from './BodyApp'
-import { setAppState, setAppMode, addCurrentWords , updateScore} from '../../redux/appReducer'
-import {setBlockSelected} from '../../redux/wordsReducer'
+import { setAppState, setAppMode, addCurrentWords, 
+        updateScore, addWrongWord,  setStateInit} from '../../redux/appReducer'
+import {setBlockSelected, setNewScore} from '../../redux/wordsReducer'
 
 let mapStateToProps = (state) => {
     return{
@@ -26,6 +27,15 @@ let mapDispatchToProps = (dispatch) => {
         },
         updateScore:(score) => {
             dispatch(updateScore(score))
+        },
+        addWrongWord:(wrongWord) => {
+            dispatch(addWrongWord(wrongWord))
+        },
+        setNewScore:(keyName, score) => {
+            dispatch(setNewScore(keyName, score))
+        },
+        setStateInit:() => {
+            dispatch(setStateInit())
         },
         
     }

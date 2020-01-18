@@ -1,7 +1,9 @@
 const SET_BLOCK_SELECTED = 'SET_BLOCK_SELECTED'
+const SET_NEW_SCORE = 'SET_NEW_SCORE'
 
 let wordsBlock = {
     verbs1: {
+        keyName:'verbs1',
         name:'Verbs1',
         id:1,
         score: 0,
@@ -178,7 +180,7 @@ let wordsBlock = {
         ],
     },
     verbs2: {
-        
+        keyName:'verbs2',
         name:'Verbs2',
         id:2,
         score: 0,
@@ -361,7 +363,7 @@ let wordsBlock = {
         },],
     },
     vegetables: {
-        
+        keyName:'vegetables',
         name:'Vegetables',
         id:3,
         score: 0,
@@ -465,7 +467,7 @@ let wordsBlock = {
             ]
     },
     fruits: {
-        
+        keyName:'fruits',
         name:'Fruits',
         id:4,
         score: 0,
@@ -569,7 +571,7 @@ let wordsBlock = {
         ]
     },
     dessert: {
-        
+        keyName:'dessert',
         name:'Dessert',
         id:5,
         score: 0,
@@ -643,7 +645,7 @@ let wordsBlock = {
         ]
     },
     drinks: {
-        
+        keyName:'drinks',
         name:'Drinks',
         id:6,
         score: 0,
@@ -702,7 +704,7 @@ let wordsBlock = {
         ]
     },
     milkProducts: {
-        
+        keyName:'milkProducts',
         name:'Milk Products',
         id:7,
         score: 0,
@@ -712,7 +714,8 @@ let wordsBlock = {
                 ru: 'йогурт',
                 en: 'yogurt',
                 fi: 'jogurtti'
- },{
+ },
+ {
                 img:'data:image/jpeg;base64,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',
                 ru: 'молоко',
                 en: 'milk',
@@ -737,7 +740,8 @@ let wordsBlock = {
                 ru: 'творог',
                 en: 'cottage cheese',
                 fi: 'raejuusto'
- },{
+ },
+{
                 img:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnMHikdznHJkxoD7A5iShQiKyOI7fFMq4_6n5OPeVZFPsNTnjV',
                 ru: 'кефир',
                 en: 'kefir',
@@ -746,7 +750,7 @@ let wordsBlock = {
         ]
     },
     food: {
-        
+        keyName:'food',
         name:'Food',
         id:8,
         score: 0,
@@ -949,6 +953,20 @@ const wordsReducer = (state = initState, action) => {
             return {
                 ...state, selectedBlock:action.selectedBlock
             }
+        case SET_NEW_SCORE:
+            
+            let key = action.keyName
+            let name = `appFiScore_${key}`
+            localStorage.setItem(`${name}`, action.score)
+            let newWordsBlock = {...state.wordsBlock}
+            for(let key in newWordsBlock){
+                if(key === action.keyName){
+                    newWordsBlock[key].score = action.score
+                }
+            }
+            return {
+                ...state, wordsBlock:{...state.wordsBlock, ...newWordsBlock}
+            }
             
         default:
             return state
@@ -957,6 +975,7 @@ const wordsReducer = (state = initState, action) => {
 }
 
 export const setBlockSelected = (selectedBlock) => ({type: SET_BLOCK_SELECTED, selectedBlock})
+export const setNewScore = (keyName, score) => ({type: SET_NEW_SCORE, keyName, score})
 // export const setAppState = (appState) => ({
 //     type: SET_APP_STATE,
 //     appState

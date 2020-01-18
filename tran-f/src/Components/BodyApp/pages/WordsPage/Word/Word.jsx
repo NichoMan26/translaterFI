@@ -7,6 +7,7 @@ import { reset } from 'redux-form'
 
 const Word = (props) => {
     let w = props.word
+    console.log(w.fi);
     const [answer, setAnswer] = useState('')
     const [help, setHelp] = useState(false)
     const useHelp = () => {
@@ -33,6 +34,7 @@ const Word = (props) => {
             setHelp(false)
         } else {
             if(props.mode === 'exam'){
+                props.addWrongWord({wrong:dataForm.wordAnswer, properly:w.fi})
                 dispatch(reset('wordAnswer'));
                 props.deleteExecutedWord()
             } 
