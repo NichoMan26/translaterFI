@@ -1,6 +1,5 @@
 const SET_APP_STATE = 'SET_APP_STATE'
 const SET_STATE_INIT = 'SET_STATE_INIT'
-const SET_USER_NAME = 'SET_USER_NAME'
 const SET_APP_MODE = 'SET_APP_MODE'
 const ADD_CURRENT_BLOCK = 'ADD_CURRENT_BLOCK'
 const UPDATE_SCORE = 'UPDATE_SCORE'
@@ -8,10 +7,8 @@ const ADD_WRONG_WORD = 'ADD_WRONG_WORD'
 // const DELETE_WORD_FROM_ARR_WORDS = 'DELETE_WORD_FROM_ARR_WORDS'
 
 ///////********************/////////////
-let nameLS 
-localStorage.appFiName ? nameLS = localStorage.appFiName : nameLS = ''
 let initState = {
-    userName: nameLS,
+    // userName: nameLS,
     words: [],
     wordsLength:0,
     appRun:false,
@@ -28,9 +25,6 @@ const appReducer = (state = initState, action) => {
             return {...state, appState:action.appState?action.appState:'init'}
         case SET_STATE_INIT:// stay firstly state
             return {...state, ...initState, appState:'start'}
-        case SET_USER_NAME: // Init User name 
-            localStorage.setItem('appFiName', action.userName)
-            return {...state, userName:action.userName}
         case SET_APP_MODE: // Set App mode
             return {...state, mode:action.appMode}
         case ADD_CURRENT_BLOCK: // Init block how's was chessen by user
@@ -49,7 +43,6 @@ const appReducer = (state = initState, action) => {
             return state
     }
 }
-export const appUserName = (userName) => ({type:SET_USER_NAME, userName})
 export const setAppState = (appState) => ({type:SET_APP_STATE, appState})
 export const setStateInit = () => ({type:SET_STATE_INIT})
 export const setAppMode = (appMode) => ({type:SET_APP_MODE, appMode})

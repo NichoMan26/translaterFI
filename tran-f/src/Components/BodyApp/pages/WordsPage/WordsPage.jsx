@@ -16,9 +16,6 @@ const WordsPage = (props) => {
             if (idx !== number)  return w
         })
         if(newWords.length === 0){
-            if(props.app.mode === 'exam'){
-                props.setNewScore(props.app.words.keyName, props.app.score)
-            }
             props.setAppState('finish')
         }
         setWords(newWords)
@@ -30,7 +27,6 @@ const WordsPage = (props) => {
            <Statistics mode={props.app.mode}  count={props.app.score} wordsLength={props.app.wordsLength} />
            <Word increaseCount={increaseCount} 
                 mode={props.app.mode}
-                wordNumber={number}
                 addWrongWord={props.addWrongWord}
                 deleteExecutedWord={deleteExecutedWord}
                 word={words[number]}/>

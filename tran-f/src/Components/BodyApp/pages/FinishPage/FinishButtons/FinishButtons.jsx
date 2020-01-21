@@ -11,7 +11,7 @@ const FinishButtons = (props) => {
     }
    return(
     <div className={cls.wrapper}>
-      <button onTouchStart={appStateStart} className={cls.button}>Try again</button>
+      <button onTouchStart={appStateStart} className={cls.button} >Try again</button>
       {props.mode === 'exam' 
       ? <button onTouchStart={appStateResult} className={cls.button}>See result</button>
       : null}

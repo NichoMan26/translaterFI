@@ -7,7 +7,6 @@ import { reset } from 'redux-form'
 
 const Word = (props) => {
     let w = props.word
-    console.log(w.fi);
     const [answer, setAnswer] = useState('')
     const [help, setHelp] = useState(false)
     const useHelp = () => {
@@ -22,15 +21,10 @@ const Word = (props) => {
     const onSubmit = (dataForm, dispatch) => {
         if(dataForm.wordAnswer.toLowerCase() === props.word.fi){
             dispatch(reset('wordAnswer'));
-            if(props.mode === 'exam'){
-                 props.increaseCount()
-                
-            } else if (props.mode === 'study'){
-                
+            if(props.mode === 'exam' || !help){
                 props.increaseCount()
+                props.deleteExecutedWord()
             }
-            props.deleteExecutedWord()
-            dispatch(reset('wordAnswer'));
             setHelp(false)
         } else {
             if(props.mode === 'exam'){

@@ -31,6 +31,7 @@ const BodyApp = (props) => {
                             words={props.words}
                             setAppState={props.setAppState}
                             setStateInit={props.setStateInit}
+                            setNewScore={props.setNewScore}
                             />)
       case 'result':
         return (<ResultPage app={props.app}
@@ -38,7 +39,7 @@ const BodyApp = (props) => {
                             setStateInit={props.setStateInit}
           /> )
       default:
-        return(<div>nothink <button onTouchStart={() => {props.appSetState('init')}}>Try again</button></div>)
+        return(<div>nothink <button onTouchStart={() => {props.appSetState('init')}} >Try again</button></div>)
     }
 }
 export default BodyApp 

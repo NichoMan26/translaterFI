@@ -740,7 +740,7 @@ let wordsBlock = {
                 ru: 'творог',
                 en: 'cottage cheese',
                 fi: 'raejuusto'
- },
+  },
 {
                 img:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnMHikdznHJkxoD7A5iShQiKyOI7fFMq4_6n5OPeVZFPsNTnjV',
                 ru: 'кефир',

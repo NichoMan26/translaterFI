@@ -12,9 +12,7 @@ const FinishPage = (props) => {
                 wordsKey = key
             }
         }
-        let name = `appFiScore_${wordsKey}`
-            localStorage.setItem(`${name}`, props.app.score)
-    
+        props.setNewScore(wordsKey, props.app.score)    
         }
    return(
        <div className={cls.wrapper}>
