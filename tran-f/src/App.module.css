@@ -8,4 +8,8 @@
 }
 .wrapper{
     min-height: 100vh;
+    max-width: 450px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 }

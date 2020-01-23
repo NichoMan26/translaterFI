@@ -10,7 +10,7 @@ const Word = (props) => {
     const [answer, setAnswer] = useState('')
     const [help, setHelp] = useState(false)
     const useHelp = () => {
-        setHelp(help ? false : true)
+        setHelp(true)
     }
     const answerChange = (newValue) => {// if answer change
         setAnswer(newValue)
@@ -25,6 +25,7 @@ const Word = (props) => {
                 props.increaseCount()
                 props.deleteExecutedWord()
             }
+            props.changeNumber()
             setHelp(false)
         } else {
             if(props.mode === 'exam'){
@@ -38,16 +39,28 @@ const Word = (props) => {
 
    return(
        <div className={cls.wrapper}>
-           <div onTouchStart={useHelp} className={cls.imgWrapper}>
-               <img  className={cls.img} src={w.img} alt={w.fi}/>
-               {props.mode ==='study' 
-                ? <div className={help 
-                    ? `${cls.helpWrapper} ${cls.helpWrapper_active}` 
-                    : cls.helpWrapper}>
-                    <span className={cls.helpText}>{w.fi}</span>
-                </div> 
-                : null}
-           </div>
+           {props.isMobile
+                ? <div onTouchStart={useHelp} className={cls.imgWrapper}>
+                    <img  className={cls.img} src={w.img} alt={w.fi}/>
+                    {props.mode ==='study' 
+                        ? <div className={help 
+                            ? `${cls.helpWrapper} ${cls.helpWrapper_active}` 
+                            : cls.helpWrapper}>
+                            <span className={cls.helpText}>{w.fi}</span>
+                        </div> 
+                        : null}
+                </div>
+               : <div onClick={useHelp} className={cls.imgWrapper}>
+                   <img className={cls.img} src={w.img} alt={w.fi} />
+                   {props.mode === 'study'
+                       ? <div className={help
+                           ? `${cls.helpWrapper} ${cls.helpWrapper_active}`
+                           : cls.helpWrapper}>
+                           <span className={cls.helpText}>{w.fi}</span>
+                       </div>
+                       : null}
+               </div>}
+           
            <p className={cls.word}>{w.en}</p>
            <ReduxWordForm answer={answer}
                           word={w}

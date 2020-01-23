@@ -29,7 +29,9 @@ const ResultPage = (props) => {
                 </li>}
                 {JSX}
             </ul>
-            <button onTouchStart={appStateStart} className={cls.button}>Try again</button>
+            {props.app.isMobile
+            ? <button onTouchStart={appStateStart} className={cls.button}>Try again</button>
+            : <button onClick={appStateStart} className={cls.button}>Try again</button>}
         </div>
     )
 }

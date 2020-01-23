@@ -8,7 +8,7 @@ const ADD_WRONG_WORD = 'ADD_WRONG_WORD'
 
 ///////********************/////////////
 let initState = {
-    // userName: nameLS,
+    isMobile: /iPhone|iPad|iPod|Android/i.test(navigator.userAgent),
     words: [],
     wordsLength:0,
     appRun:false,

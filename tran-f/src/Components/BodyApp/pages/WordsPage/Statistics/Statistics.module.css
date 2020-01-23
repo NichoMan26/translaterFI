@@ -1,5 +1,6 @@
 .wrapper{
-    height: calc((100vw - 250px) / 2);
+    height: calc((100vw - 300px) / 2);
+    max-height: 00px;
     text-align: center;
     display: flex;
     align-items: center;

@@ -920,12 +920,22 @@ let wordsBlock = {
         ]
     },
 
-    // EXAMPLE: {
-    //     id:$,
-    //     name:'EXAMPLE',
-    //     score: 0,
-    //     words:[]
-    // },
+    EXAMPLE: {
+        id:10,
+        name:'EXAMPLE',
+        score: 0,
+        words:[ {
+            img:'https://www.goethe-verlag.com/book2/_alleima/0374.jpg',
+            ru: 'рыба',
+            en: 'fish',
+            fi: 'kala'
+},{
+            img:'https://www.goethe-verlag.com/book2/_alleima/0764.jpg',
+            ru: 'лосось',
+            en: 'salmon',
+            fi: 'lohi'
+},]
+    },
     
 }
 let arrWithBlockWord = [] 

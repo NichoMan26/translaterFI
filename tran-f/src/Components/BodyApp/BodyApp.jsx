@@ -9,8 +9,8 @@ import ResultPage from './pages/ResultPage/ResultPage'
 const BodyApp = (props) => {
     switch(props.app.appState) {
       case 'init':
-        //return <WordsPage app={props.app}/>
-        return(<InitPage setAppState={props.setAppState}/>)
+        return(<InitPage setAppState={props.setAppState}
+                          isMobile={props.app.isMobile}/>)
       case 'start':
         return(<SettingsPage selectedBlock={props.selectedBlock} 
                              setBlockSelected={props.setBlockSelected}

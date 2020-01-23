@@ -29,6 +29,7 @@ const FinishPage = (props) => {
             </p>
            : null }
            <FinishButtons mode={props.app.mode} 
+                        isMobile={props.app.isMobile}
                         setStateInit={props.setStateInit} 
                         setAppState={props.setAppState}/>
        </div>

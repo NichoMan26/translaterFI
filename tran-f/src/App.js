@@ -7,6 +7,7 @@ import Menu from './Components/Menu/Menu';
 import BodyAppContainer from './Components/BodyApp/BodyAppContainer';
 
 function App() {
+  
   return (
     <Provider store={store}>
       <div className={cls.wrapper}>

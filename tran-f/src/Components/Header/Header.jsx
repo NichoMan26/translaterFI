@@ -7,6 +7,7 @@ const Header = (props) => {
         <header className={cls.wrapper}>
             <UserName setUserName={props.setUserName}
                         appState={props.app.appState}
+                        isMobile={props.app.isMobile}
                         userName={props.appName.userName}/>
         </header>
     )

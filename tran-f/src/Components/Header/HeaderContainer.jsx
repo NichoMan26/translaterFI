@@ -3,10 +3,12 @@ import Header from './Header'
 import {appUserName} from './../../redux/appNameReducer'
 
 
+
 let mapStateToProps = (state) => {
     return{
         appName: state.appName,
         app: state.appData
+
     }
 }
 let mapDispatchToProps = (dispatch) => {
