@@ -34,9 +34,7 @@ const Word = (props) => {
                 props.deleteExecutedWord()
             } 
         }
-        
       }
-
    return(
        <div className={cls.wrapper}>
            {props.isMobile
