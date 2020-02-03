@@ -1,3 +1,8 @@
+@keyframes buttonInit {
+  from {border: 2px solid yellow;}
+  50% {border: 2px solid rgba(255, 255, 0, 0.384);}
+  to {border: 2px solid yellow;}
+}
 .add-button-wrapper{
   max-width: 450px;
   width: 100vw;
@@ -15,4 +20,6 @@
     color:yellow;
     z-index: 10;
     border-radius: 5px;
+    animation: buttonInit 2s infinite;
   }
+  

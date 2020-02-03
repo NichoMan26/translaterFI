@@ -2,7 +2,6 @@ import React from 'react'
 import cls from  './FinishButtons.module.css'
 
 const FinishButtons = (props) => {
-  console.log('props: ', props);
     const appStateStart = () => {
       props.setStateInit()
       props.setAppState('start')

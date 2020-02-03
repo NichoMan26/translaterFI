@@ -15,6 +15,7 @@ const Menu = (props) => {
     return(
       <div className={menuOpen ? `${cls.wrapper} ${cls.wrapper_active}` : cls.wrapper}>
         <MenuButton menuOpen={menuOpen}
+                    setAppState={props.setAppState}
                     openMenu={openMenu}
                     closeMenu={closeMenu}/>
       </div>

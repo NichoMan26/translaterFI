@@ -1,9 +1,11 @@
 .wrapper{
     background-color: #2c2c2ce0;
-    min-height: calc(100vh - 50px);
+    min-height: 100%;
     width: calc(100% - 30px);
-    padding: 10px;
+    padding: 10px 5px 10px 10px;
     position: absolute;
+    display: flex;
+    justify-content: flex-end;
     z-index: 2;
     top: 0;
 }
@@ -29,4 +31,9 @@
     background-color: yellow;
     border: 1px solid #2c2c2c;
     border-radius: 20px;
+}
+.ul{
+    width: 100%;
+    
+    border-top: 2px solid yellow;
 }

@@ -1,6 +1,7 @@
 .wrapper{
     background-color:#2c2c2c;
     display: flex;
+    padding: 0 0 0 40px;
     justify-content: center;
     align-items: center;
     height: 50px;

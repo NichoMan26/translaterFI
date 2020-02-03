@@ -2,7 +2,6 @@ import React from 'react'
 import cls from  './InitPage.module.css'
 
 const InitPage = (props) => {
-  console.log('props: ', props);
   const appStateStart = () => {
     props.setAppState('start')
   }

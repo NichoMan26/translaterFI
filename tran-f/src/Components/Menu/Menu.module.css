@@ -1,9 +1,9 @@
 .wrapper{
     position: absolute;
     top: 50px;
-    left: calc(-100% + 30px);
+    left: calc(-100% + 70px);
     width: 100%;
-    height: calc(100vh - 50px);
+    height: calc(100% - 50px);
     transition: 0.5s;
 }
 .wrapper_active{

@@ -3,7 +3,7 @@ import cls from './App.module.css';
 import HeaderContainer from './Components/Header/HeaderContainer'
 import store from './redux/store'
 import { Provider } from 'react-redux'
-import Menu from './Components/Menu/Menu';
+import MenuContainer from './Components/Menu/MenuContainer'
 import BodyAppContainer from './Components/BodyApp/BodyAppContainer';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <div className={cls.wrapper}>
           <HeaderContainer/>
           <BodyAppContainer/>
-          <Menu/>
+          <MenuContainer/>
       </div>
     </Provider>
   );
