@@ -16,12 +16,12 @@
     margin: 10px 0;
     text-align: center;
     line-height: 30px;
-    padding: 2px;
+    padding: 1px;
 }
 .menuIcon svg{
-    max-width: 20px;
+    max-width: 26px;
     fill:yellow;
-    max-height: 20px;
+    max-height: 26px;
 }
 
 .menuIcon_menu{

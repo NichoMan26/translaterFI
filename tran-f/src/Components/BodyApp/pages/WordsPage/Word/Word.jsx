@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import cls from  './Word.module.css'
-
+import imgNotFound from '../../../../../assets/img/word_not_found.png'
 import ReduxWordForm from './wordForm/WordForm'
 import { reset } from 'redux-form'
 
@@ -39,7 +39,7 @@ const Word = (props) => {
        <div className={cls.wrapper}>
            {props.isMobile
                 ? <div onTouchStart={useHelp} className={cls.imgWrapper}>
-                    <img  className={cls.img} src={w.img} alt={w.fi}/>
+                    <img  className={cls.img} src={w.img ? w.img : imgNotFound} alt={w.fi}/>
                     {props.mode ==='study' 
                         ? <div className={help 
                             ? `${cls.helpWrapper} ${cls.helpWrapper_active}` 
@@ -49,7 +49,7 @@ const Word = (props) => {
                         : null}
                 </div>
                : <div onClick={useHelp} className={cls.imgWrapper}>
-                   <img className={cls.img} src={w.img} alt={w.fi} />
+                   <img className={cls.img} src={w.img ? w.img : imgNotFound} alt={w.fi} />
                    {props.mode === 'study'
                        ? <div className={help
                            ? `${cls.helpWrapper} ${cls.helpWrapper_active}`
