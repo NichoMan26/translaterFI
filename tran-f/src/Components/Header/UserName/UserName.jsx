@@ -27,7 +27,7 @@ const UserName = (props) => {
         }
        
     } else {
-        return <UserNameForm  onSubmit={onSubmit}/>
+        return <UserNameForm userName={props.userName}  onSubmit={onSubmit}/>
     }
     
 }

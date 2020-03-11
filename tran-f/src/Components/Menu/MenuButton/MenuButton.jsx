@@ -22,38 +22,40 @@ const MenuButton = (props) => {
     const toggleMenu = () => {
         return props.menuOpen ? props.closeMenu() : props.openMenu()
     }
+    const closeMenu = () => {
+        return props.menuOpen ? props.closeMenu() : null
+    }
     return(
         <div className={cls.wrapper}>
             <ul className={cls.ul}>
                 <MenuItem   handleEvent={toggleMenu}
+                            isMobile={props.isMobile}
+                            score={props.score}
                             text={'Close Menu'}
                             isMenu={true}
                             icon={burger()}
                             />
                 <MenuItem   handleEvent={props.setAppState}
+                            isMobile={props.isMobile}
+                            score={props.score}
                             text={'Choose mode or words'}
                             eventValue={'start'}
                             icon={settings()}
+                            isPopUp={props.isPopUp}
+                            closeMenu={closeMenu}
+                            setIsPopUp={props.setIsPopUp}
                             />      
                 <MenuItem   handleEvent={props.setAppState}
+                            isMobile={props.isMobile}
+                            score={props.score}
                             text={'Rulles'}
                             eventValue={'init'}
                             icon={rules()}
+                            isPopUp={props.isPopUp}
+                            closeMenu={closeMenu}
+                            setIsPopUp={props.setIsPopUp}
                             />                    
-                
             </ul>
-            {/* {props.isMobile
-                ? <div onTouchStart={props.menuOpen ? props.closeMenu : props.openMenu} className={cls.button}>
-                    <div className={cls.dote}></div>
-                    <div className={cls.dote}></div>
-                    <div className={cls.dote}></div>
-                </div>
-                : <div onClick={props.menuOpen ? props.closeMenu : props.openMenu} className={cls.button}>
-                    <div className={cls.dote}></div>
-                    <div className={cls.dote}></div>
-                    <div className={cls.dote}></div>
-                </div>}
-             */}
         </div>
     )
 }

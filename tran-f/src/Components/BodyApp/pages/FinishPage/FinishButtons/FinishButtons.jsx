@@ -11,14 +11,16 @@ const FinishButtons = (props) => {
     }
    return(
     <div className={cls.wrapper}>
-      {props.isMobile 
-      ? <button onTouchStart={appStateStart} className={cls.button} >Try again</button>
-      : <button onClick={appStateStart} className={cls.button} >Try again</button>}
+      <button onTouchStart={appStateStart} className={cls.button}
+              onClick={props.isMobile ? ()=>{} : appStateStart}>
+              Try again
+      </button>
       
       {props.mode === 'exam' 
-      ? props.isMobile 
-        ? <button onTouchStart={appStateResult} className={cls.button}>See result</button>
-        : <button onClick={appStateResult} className={cls.button}>See result</button>
+      ? <button onTouchStart={appStateResult} className={cls.button}
+                onClick={props.isMobile ? ()=>{} : appStateResult}>
+                See result
+        </button>
       : null}
     </div>
    )

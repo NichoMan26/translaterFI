@@ -1,0 +1,38 @@
+@keyframes addPopUp {
+    from {top: -100%;}
+    20% {top: 60%}
+    40% {top: 45%}
+    60% {top: 50%}
+    to {top: 50%}
+  }
+.wrapper{
+    position: fixed;
+    max-width: 350px;
+    width: 85%;
+    left: calc(50% + 20px);
+    top: 50%;
+    background-color: #2c2c2c;
+    transform: translate(-50%);
+    padding: 10px;
+    border: 2px solid yellow;
+    border-radius: 5px;
+    animation: addPopUp 1.5s ;
+    }
+.text{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    color:yellow;
+    margin-bottom: 10px;
+}
+.buttonWrapper{
+    display: flex;
+    justify-content: space-evenly
+}
+.button{
+    padding: 5px;
+    background-color: transparent;
+    border: 2px solid yellow;
+    color:yellow;
+    border-radius: 5px;
+}

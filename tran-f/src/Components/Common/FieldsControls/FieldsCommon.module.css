@@ -1,6 +1,6 @@
 .error{
    position: absolute;
-   left: 50%;
+   left: calc(50% + 20px);
    top: 10%;
    transform: translate(-50%, 0);
    color: red;

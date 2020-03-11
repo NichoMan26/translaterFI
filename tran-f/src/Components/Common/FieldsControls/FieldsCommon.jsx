@@ -4,7 +4,7 @@ export const Input  = ({input, meta, ...props}) => {
     return(
         <>
             <div className={meta.submitFailed && meta.error ? cls.error : cls.noError}>{meta.error}</div>
-            <input {...input} {...props}/>
+            <input  {...input} {...props} />
         </>
     )
 }

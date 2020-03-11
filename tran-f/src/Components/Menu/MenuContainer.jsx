@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import Menu from './Menu'
-import {setAppState} from '../../redux/appReducer'
+import {setAppState, updateScore} from '../../redux/appReducer'
 
 
  let mapStateToProps = (state) => {
@@ -9,11 +9,14 @@ import {setAppState} from '../../redux/appReducer'
     }
  }
  let mapDispatchToProps = (dispatch) => {
-   return {
-    setAppState:(appState) => {
-        dispatch(setAppState(appState));
-      },
-    }
+  return {
+   setAppState:(appState) => {
+       dispatch(setAppState(appState));
+     },
+   setScoreZero:(score) => {
+     dispatch(updateScore(score));
+     }
+   }
  }
   
 export default connect(mapStateToProps, mapDispatchToProps)(Menu)

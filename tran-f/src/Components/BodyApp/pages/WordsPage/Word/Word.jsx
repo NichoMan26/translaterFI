@@ -37,8 +37,8 @@ const Word = (props) => {
       }
    return(
        <div className={cls.wrapper}>
-           {props.isMobile
-                ? <div onTouchStart={useHelp} className={cls.imgWrapper}>
+           <div onTouchStart={useHelp} className={cls.imgWrapper}
+                onClick={props.isMobile ? ()=>{} : useHelp}>
                     <img  className={cls.img} src={w.img ? w.img : imgNotFound} alt={w.fi}/>
                     {props.mode ==='study' 
                         ? <div className={help 
@@ -47,18 +47,7 @@ const Word = (props) => {
                             <span className={cls.helpText}>{w.fi}</span>
                         </div> 
                         : null}
-                </div>
-               : <div onClick={useHelp} className={cls.imgWrapper}>
-                   <img className={cls.img} src={w.img ? w.img : imgNotFound} alt={w.fi} />
-                   {props.mode === 'study'
-                       ? <div className={help
-                           ? `${cls.helpWrapper} ${cls.helpWrapper_active}`
-                           : cls.helpWrapper}>
-                           <span className={cls.helpText}>{w.fi}</span>
-                       </div>
-                       : null}
-               </div>}
-           
+            </div>           
            <p className={cls.word}>{w.en}</p>
            <ReduxWordForm answer={answer}
                           word={w}

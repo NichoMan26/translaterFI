@@ -1,21 +1,34 @@
-import React from 'react'
+import React, {useState} from 'react'
 import cls from './MenuItem.module.css'
+import PopUp from '../../Common/PopUp/PopUp'
 
-const MenuItem = (props) => {
+const MenuItem = (props) => {  
+    
+
+    const checkScorer = () => {
+        if(props.isMenu){
+            props.handleEvent(props.eventValue)
+        } else {
+            props.closeMenu()
+            if(props.score === 0){
+                props.handleEvent(props.eventValue)
+            } else {
+                props.setIsPopUp(true)
+            }
+        }
+       
+       
+    }
+   
     return(<>
-        {props.isMobile
-            ? <li onTouchStart={(mode) => {props.handleEvent(props.eventValue)}} className={cls.li}>
+        {<li onTouchStart={checkScorer} className={cls.li}
+             onClick={props.isMobile ? null : checkScorer}>
                 <span className={cls.menuText}>{props.text}</span>
                 <span className={props.isMenu ? `${cls.menuIcon} ${cls.menuIcon_menu}` : cls.menuIcon}>
                    {props.icon}
                 </span>
-                </li>
-            : <li onClick={(mode) => {props.handleEvent(props.eventValue)}} className={cls.li}>
-                <span className={cls.menuText}>{props.text}</span>
-                <span className={props.isMenu ? `${cls.menuIcon} ${cls.menuIcon_menu}` : cls.menuIcon}>
-                    {props.icon}
-                </span>
-            </li>}
+        </li>
+            }
         </>)
 }
 export default MenuItem

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import cls from  './WordsPage.module.css'
 import Word from './Word/Word'
 import Statistics from './Statistics/Statistics'
+import PopUp from '../../../Common/PopUp/PopUp'
 
 
 const WordsPage = (props) => { 
@@ -28,7 +29,7 @@ const WordsPage = (props) => {
         setWords(newWords)
     }
    return(
-       <div>
+       <div className={cls.wrapper}>
            <Statistics mode={props.app.mode}  count={props.app.score} wordsLength={props.app.wordsLength} />
            <Word increaseCount={increaseCount} 
                 mode={props.app.mode}
@@ -38,6 +39,7 @@ const WordsPage = (props) => {
                 addWrongWord={props.addWrongWord}
                 deleteExecutedWord={deleteExecutedWord}
                 word={words[number]}/>
+            
        </div>
    )
 }
